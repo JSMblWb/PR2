@@ -22,7 +22,7 @@ int main() {
                 break;
             case 2:
                 std::cout << "\n ЗАДАНИЕ 2: c*d mod m = 1\n";
-                solveMultiplierCongruence();
+                computeModularInverse();
                 break;
             case 3:
                 std::cout << "\n ЗАДАНИЕ 3: c^-1 mod m = d\n";
