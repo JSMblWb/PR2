@@ -47,52 +47,8 @@ int extendedEuclid(int a, int b, int &u, int &v) {
     return old_r;
 }
 
-//задание 2
-void solveMultiplierCongruence() {
-    std::cout << "\n ЗАДАНИЕ 2: c*d mod m = 1\n";
-
-    int c, m;
-    std::cout << "Введите число c: ";
-    std::cin >> c;
-    std::cout << "Введите модуль m: ";
-    std::cin >> m;
-
-    if (m <= 1) {
-        std::cout << "Модуль должен быть больше 1.\n";
-        return;
-    }
-    if (c <= 0) {
-        std::cout << "Число c должно быть положительным.\n";
-        return;
-    }
-
-    int u, v;
-    int g = extendedEuclid(c, m, u, v);
-
-    std::cout << "\nПолучили: " << c << "*" << u << " + " << m << "*" << v
-    << " = " << g << "\n";
-
-    if (g != 1) {
-        std::cout << "НОД(c, m) = " << g << " != 1, обратного элемента нет.\n";
-        return;
-    }
-
-    std::cout << "Так как НОД = 1, то " << c << "*u = 1 (mod m), значит u — обратный элемент.\n";
-    int d = u % m;
-    if (d < 0) {
-        d = d + m;
-    }
-    std::cout << "Приводим u к диапазону 0..m-1: d = u mod m = " << d << "\n";
-
-    int check = ((c % m) * (d % m)) % m;
-    std::cout << "Проверка: c*d mod m = " << check << "\n";
-    std::cout << "Ответ: d = " << d << "\n";
-}
-
-//задание 3
+//задание 2 и 3
 void computeModularInverse() {
-    std::cout << "\n ЗАДАНИЕ 3: c^-1 mod m = d\n";
-
     int c, m;
     std::cout << "Введите число c: ";
     std::cin >> c;
